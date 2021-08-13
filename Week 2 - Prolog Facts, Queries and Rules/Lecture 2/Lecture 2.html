@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0091)https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/panel.php?lectureNumber=2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style>
+body {   font-family : arial, helvetica, sans-serif;  
+}
+</style>
+
+<title>Lecture 2</title>
+
+<style type="TEXT/CSS">
+  A {text-decoration: none}
+  #n1, #t1 {color: black; font-weight: normal; text-decoration: none}
+  #n2, #t2 {color: black; font-weight: normal; text-decoration: none}
+  #n3, #t3 {color: black; font-weight: normal; text-decoration: none}
+  #n4, #t4 {color: black; font-weight: normal; text-decoration: none}
+  #n5, #t5 {color: black; font-weight: normal; text-decoration: none}
+  #n6, #t6 {color: black; font-weight: normal; text-decoration: none}
+  #n7, #t7 {color: black; font-weight: normal; text-decoration: none}
+  #n8, #t8 {color: black; font-weight: normal; text-decoration: none}
+</style>
+
+
+<script type="text/javascript">
+<!-- /* Hide content from old browsers */
+
+var lectureNumber = 2;
+ 
+  var w = (screen.availWidth * 4 / 5);
+  var h = (screen.availHeight * 4 / 5);
+      
+  var swin = window.open('notes.php?lectureNumber=2&slides=yes','Slides');
+   //          ,'width=' + w + ',height=' + h + ',resizable,scrollbars,menubar,screenX=' + w/5 + ',screenY=1');
+  swin.focus();    
+
+  function changeColour(newColour,identifier) {
+      if(!(navigator.appName=='Netscape' && parseInt(navigator.appVersion)<5))
+      {
+           textObj = document.getElementById(identifier).style;
+           textObj.color = newColour;
+      }
+  }
+  
+  function changeToNormal(identifier) {
+      if(!(navigator.appName=='Netscape' && parseInt(navigator.appVersion)<5))
+      {
+           textObj = document.getElementById(identifier).style;
+           textObj.color = 'black';
+           textObj.fontWeight = 'normal';
+      }
+  }
+  
+  function changeToHighlighted(identifier) {
+      if(!(navigator.appName=='Netscape' && parseInt(navigator.appVersion)<5))
+      {
+           textObj = document.getElementById(identifier).style;
+           textObj.color = 'green';
+           textObj.fontWeight = 'bold';
+      }
+  }
+
+  function makeAllNormal() {
+     for(var i=1; i <= 7 + 1; i++)
+     { 
+          changeToNormal('n'+i); changeToNormal('t'+i);
+     }
+  }
+  
+  function makeAllBlue() {
+      makeAllNormal();
+  }
+  function makeBlue() {
+      makeAllBlue();
+  }
+  
+     
+// end hiding content from old browsers  -->
+</script>
+
+
+</head>
+<body bgcolor="white"><a name="top"></a>
+<center>
+
+<table border="0" cellspacing="6" cellpadding="6" rules="NONE" title="panelheading">
+<tbody><tr valign="TOP">
+<td valign="TOP"><h3>Lecture 2: Prolog: Facts, Queries and Rules</h3></td>
+</tr>
+</tbody></table>
+<table border="0" cellspacing="3" cellpadding="3" rules="none" title="sltable">
+
+<tbody><tr>
+        <td align="right" valign="top">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/panel.php?lectureNumber=2#" onclick="makeAllNormal();changeToHighlighted(&#39;n1&#39;);changeToHighlighted(&#39;t1&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S1&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+        <span id="n1" style="color: green; font-weight: bold;">1.</span></a>
+        </td>
+        <td align="left">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/nowhere" onclick="makeAllNormal();changeToHighlighted(&#39;n1&#39;);changeToHighlighted(&#39;t1&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S1&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+	     <span id="t1" style="color: green; font-weight: bold;">In the Last Lecture</span></a>
+	     </td>
+    </tr>
+
+<tr>
+        <td align="right" valign="top">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/panel.php?lectureNumber=2#" onclick="makeAllNormal();changeToHighlighted(&#39;n2&#39;);changeToHighlighted(&#39;t2&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S2&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+        <span id="n2" style="color: black; font-weight: normal;">2.</span></a>
+        </td>
+        <td align="left">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/nowhere" onclick="makeAllNormal();changeToHighlighted(&#39;n2&#39;);changeToHighlighted(&#39;t2&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S2&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+	     <span id="t2" style="color: black; font-weight: normal;">Prolog Facts</span></a>
+	     </td>
+    </tr>
+
+<tr>
+        <td align="right" valign="top">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/panel.php?lectureNumber=2#" onclick="makeAllNormal();changeToHighlighted(&#39;n3&#39;);changeToHighlighted(&#39;t3&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S3&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+        <span id="n3" style="color: black; font-weight: normal;">3.</span></a>
+        </td>
+        <td align="left">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/nowhere" onclick="makeAllNormal();changeToHighlighted(&#39;n3&#39;);changeToHighlighted(&#39;t3&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S3&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+	     <span id="t3" style="color: black; font-weight: normal;">An Example Program of Facts</span></a>
+	     </td>
+    </tr>
+
+<tr>
+        <td align="right" valign="top">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/panel.php?lectureNumber=2#" onclick="makeAllNormal();changeToHighlighted(&#39;n4&#39;);changeToHighlighted(&#39;t4&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S4&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+        <span id="n4" style="color: black; font-weight: normal;">4.</span></a>
+        </td>
+        <td align="left">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/nowhere" onclick="makeAllNormal();changeToHighlighted(&#39;n4&#39;);changeToHighlighted(&#39;t4&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S4&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+	     <span id="t4" style="color: black; font-weight: normal;">Prolog Queries</span></a>
+	     </td>
+    </tr>
+
+<tr>
+        <td align="right" valign="top">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/panel.php?lectureNumber=2#" onclick="makeAllNormal();changeToHighlighted(&#39;n5&#39;);changeToHighlighted(&#39;t5&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S5&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+        <span id="n5" style="color: black; font-weight: normal;">5.</span></a>
+        </td>
+        <td align="left">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/nowhere" onclick="makeAllNormal();changeToHighlighted(&#39;n5&#39;);changeToHighlighted(&#39;t5&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S5&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+	     <span id="t5" style="color: black; font-weight: normal;">Queries With Variables</span></a>
+	     </td>
+    </tr>
+
+<tr>
+        <td align="right" valign="top">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/panel.php?lectureNumber=2#" onclick="makeAllNormal();changeToHighlighted(&#39;n6&#39;);changeToHighlighted(&#39;t6&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S6&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+        <span id="n6" style="color: black; font-weight: normal;">6.</span></a>
+        </td>
+        <td align="left">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/nowhere" onclick="makeAllNormal();changeToHighlighted(&#39;n6&#39;);changeToHighlighted(&#39;t6&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S6&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+	     <span id="t6" style="color: black; font-weight: normal;">Conjunctions of Queries</span></a>
+	     </td>
+    </tr>
+
+<tr>
+        <td align="right" valign="top">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/panel.php?lectureNumber=2#" onclick="makeAllNormal();changeToHighlighted(&#39;n7&#39;);changeToHighlighted(&#39;t7&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S7&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+        <span id="n7" style="color: black; font-weight: normal;">7.</span></a>
+        </td>
+        <td align="left">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/nowhere" onclick="makeAllNormal();changeToHighlighted(&#39;n7&#39;);changeToHighlighted(&#39;t7&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S7&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+	     <span id="t7" style="color: black; font-weight: normal;">A Family Program</span></a>
+	     </td>
+    </tr>
+
+<tr>
+        <td align="right" valign="top">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/panel.php?lectureNumber=2#" onclick="makeAllNormal();changeToHighlighted(&#39;n8&#39;);changeToHighlighted(&#39;t8&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S8&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+        <span id="n8" style="color: black; font-weight: normal;">8.</span></a>
+        </td>
+        <td align="left">
+        <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/nowhere" onclick="makeAllNormal();changeToHighlighted(&#39;n8&#39;);changeToHighlighted(&#39;t8&#39;);
+                 var swin = window.open(&#39;notes.php?lectureNumber=2&amp;slides=yes#S8&#39;,&#39;Slides&#39;);
+                 swin.focus(); return false;">
+	     <span id="t8" style="color: black; font-weight: normal;">Prolog Rules</span></a>
+	     </td>
+    </tr>
+
+</tbody></table>
+
+<br><br>
+</center>
+
+
+
+</body></html>

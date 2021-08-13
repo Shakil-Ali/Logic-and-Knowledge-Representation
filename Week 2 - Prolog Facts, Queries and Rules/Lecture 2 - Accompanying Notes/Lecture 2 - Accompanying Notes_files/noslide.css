@@ -1,0 +1,283 @@
+tt {
+   font-family : courier, 'ms courier', monospace; 
+}
+
+pre {
+   font-weight : normal; 
+   font-size : 12pt; 
+   font-family : courier, 'ms courier', monospace; 
+   color : black; 
+   background-color : transparent; 
+   text-align : left; 
+   margin-left : 2em; 
+}
+
+li pre  {
+   margin-top: -0.5em;
+}
+
+p {
+   font-weight : normal; 
+   font-size : 12pt; 
+   font-family : arial, helvetica, sans-serif;  
+   color : black; 
+   background-color : transparent; 
+   text-align : left; 
+   margin-left : 1em; 
+}
+
+menu {
+   font-weight : normal; 
+   font-size : 12pt; 
+   font-family : arial, helvetica, sans-serif;  
+   color : black; 
+   background-color : transparent; 
+   text-align : left; 
+   margin-left : 1em; 
+}
+
+ul, ol, dl {
+   font-weight : normal; 
+   font-size : 12pt; 
+   font-family : arial, helvetica, sans-serif;  
+   color : black; 
+   background-color : transparent; 
+   text-align : left; 
+   margin-left : 1em; 
+}
+
+h2 {
+   font-weight : bold; 
+   font-size : 14pt; 
+   font-family : arial, helvetica, sans-serif;  
+   color : black; 
+   background-color : transparent; 
+   text-align : left; 
+   margin-left : 1em; 
+}
+
+h1 {
+   font-weight : bold; 
+   font-size : 20pt; 
+   font-family : arial, helvetica, sans-serif;  
+   color : green; 
+   background-color : transparent; 
+   text-align : center; 
+}
+
+body {
+   font-family : arial, helvetica, sans-serif;  
+   color : black; 
+   background-color : white; 
+}
+
+.Text {
+   font-weight : normal; 
+   font-size : 12pt; 
+   font-family : arial, helvetica, sans-serif;  
+   color : black; 
+   background-color : transparent; 
+   text-align : left; 
+   margin-left : 1em; 
+}
+
+.TableText {
+   font-weight : normal; 
+   font-size : 12pt; 
+   font-family : arial, helvetica, sans-serif;  
+   color : black; 
+   background-color : white; 
+}
+
+.SubHeader {
+   font-weight : bold; 
+   font-size : 14pt; 
+   font-family : arial, helvetica, sans-serif;  
+   color : black; 
+   background-color : transparent; 
+   text-align : left; 
+}
+
+.SmallListing {
+   font-weight : normal; 
+   font-size : 10pt; 
+   font-family : courier, 'ms courier', monospace; 
+   color : black; 
+   background-color : transparent; 
+   text-align : left; 
+   margin-left : 1em; 
+}
+
+.SmallHeader {
+   font-weight : bold; 
+   font-size : 16pt; 
+   font-family : arial, helvetica, sans-serif;  
+   color : green; 
+   background-color : transparent; 
+   text-align : center; 
+}
+
+.Slide {
+   margin-bottom: 5px; 
+   page-break-inside: avoid;
+}
+
+.Listing {
+   font-weight : normal; 
+   font-size : 10pt; 
+   font-family : courier, 'ms courier', monospace; 
+   color : black; 
+   background-color : transparent; 
+   text-align : left; 
+   margin-left : 2em; 
+}
+
+.ListingInText {
+   font-weight : normal; 
+   font-size : 10pt; 
+   font-family : courier, 'ms courier', monospace; 
+   color : black; 
+   background-color : transparent; 
+}
+
+.LargeListing {
+   font-weight : normal; 
+   font-size : 14pt; 
+   font-family : courier, 'ms courier', monospace; 
+   color : black; 
+   background-color : transparent; 
+   text-align : left; 
+   margin-left : 1em; 
+}
+
+.Indent {
+   margin-left : 1em; 
+}
+
+.Here {
+   font-weight : normal; 
+   font-size : 10pt; 
+   font-family : arial, verdana, helvetica, sans-serif; 
+   color : #006600; 
+   background-color : #00ff99; 
+}
+
+.Header {
+   font-weight : bold; 
+   font-size : 20pt; 
+   font-family : arial, helvetica, sans-serif;  
+   color : green; 
+   background-color : transparent; 
+   text-align : center; 
+}
+
+.Green {
+   color : #008000; 
+   background-color : transparent; 
+}
+
+.Red {
+   color : #FF0000; 
+   background-color : transparent; 
+}
+
+.Blue {
+   color : #0000FF; 
+   background-color : transparent; 
+}
+
+.Purple {
+   color : #800080; 
+   background-color : transparent; 
+}
+
+.Black {
+   color : black; 
+   background-color : transparent; 
+}
+
+.GoTo {
+   font-weight : normal; 
+   font-size : 10pt; 
+   font-family : arial, verdana, helvetica, sans-serif; 
+   color : #000099; 
+   background-color : #00ffff; 
+}
+
+.CText {
+   font-weight : normal; 
+   font-size : 12pt; 
+   font-family : arial, helvetica, sans-serif;  
+   color : black; 
+   background-color : transparent; 
+   text-align : center; 
+   margin-left : 1em; 
+}
+
+.Bullets {
+   font-weight : normal; 
+   font-size : 12pt; 
+   font-family : arial, helvetica, sans-serif;  
+   color : black; 
+   background-color : transparent; 
+   text-align : left; 
+   margin-left : 1em; 
+}
+
+.QuiteBigHeader {
+   font-weight : bold; 
+   font-size : 20pt; 
+   font-family : arial, helvetica, sans-serif;  
+   color : blue; 
+   background-color : transparent; 
+   text-align : center; 
+}
+
+.BigHeader {
+   font-weight : bold; 
+   font-size : 30pt; 
+   font-family : arial, helvetica, sans-serif;  
+   color : blue; 
+   background-color : transparent; 
+   text-align : center; 
+}
+
+.BSmallListing {
+   font-weight : normal; 
+   font-size : 10pt; 
+   font-family : courier, 'ms courier', monospace; 
+   color : black; 
+   background-color : transparent; 
+   text-align : left; 
+   margin-left : 0; 
+}
+
+.BListing {
+   font-weight : normal; 
+   font-size : 10pt; 
+   font-family : courier, 'ms courier', monospace; 
+   color : black; 
+   background-color : transparent; 
+   text-align : left; 
+   margin-left : 0; 
+}
+
+.BLargeListing {
+   font-weight : normal; 
+   font-size : 10pt; 
+   font-family : courier, 'ms courier', monospace; 
+   color : black; 
+   background-color : transparent; 
+   text-align : left; 
+   margin-left : 0; 
+}
+
+.Center {
+   text-align : center; 
+}
+
+.codelink
+{
+        text-decoration: none;
+        color: grey;
+}

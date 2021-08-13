@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0091)https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/lecture-notes/notes.php?lectureNumber=2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style>
+body {   font-family : arial, helvetica, sans-serif;  
+}
+</style>
+
+
+<title>Rob Miller, INST0072 Logic and Knowledge Representation, Lecture 2</title>
+
+<script type="text/javascript">
+<!-- /* Hide content from old browsers */
+ 
+      var w = (screen.availWidth * 4 / 5);
+      var h = (screen.availHeight - 50);
+      // window.name = 'IndexWindow';    
+
+      function newWindow(url) 
+      {
+          var newWindow = window.open(url,'Examples');
+          newWindow.focus();
+      }
+
+// end hiding content from old browsers  -->
+</script>
+
+
+<link href="./Lecture 2 - Accompanying Notes_files/noslide.css" rel="STYLESHEET" type="text/css">
+
+</head>
+
+<body>
+
+<h1 class="QuiteBigHeader">INST0072 Logic and Knowledge Representation</h1>
+
+<h1 class="QuiteBigHeader">Lecture 2</h1>
+
+<h1 class="BigHeader">Prolog: Facts, Queries and Rules</h1>
+<div class="Slide">
+<a name="S1"></a>
+&nbsp;<br><hr class="NoSlideOnly">
+<h1>In the Last Lecture</h1>
+
+<p>In the last lecture we saw that:</p>
+
+<ul>
+<li>The semantics (meaning) of a propositional formula is defined in terms of its <i>truth table</i>. Each row in the truth table corresponds to an <i>interpretation</i>. An interpretation gives a value of 'true' or 'false' to each of the propositions in the logic's <i>signature</i> (vocabulary of propositions).<br><br></li>
+
+<li>An interpretation <i>satisfies</i> a formula if it assigns a value of 'true' to the formula, in which case the interpretation is a <i>model</i> of the formula. A formula is <i>satisfiable</i> if it has at least one model. Otherwise it is <i>unsatisfiable</i>.<br><br></li>
+
+<li>The formula A <i>entails</i> the formula B if every model of A is also a model of B.<br><br></li>
+
+<li>An <i>inference rule</i> is a rule for generating a new formula (called the <i>conclusion</i>) from a list of existing formulas (called the <i>premises</i>). A set of inference rules is called a <i>calculus</i>, and a series of applications of the inference rules is called a <i>derivation</i>.<br><br></li>
+
+<!--
+<li>A calculus is <i>sound</i> if, for any set of formulas KB and formula F,
+if F is derivable from KB then F is entailed by KB. The calculus is <i>complete</i> if, for any set of formulas KB and formula F, if F is entailed by KB then F is derivable from KB.<br><br></li>
+
+<li>The <i>resolution calculus</i> allows formulas to be derived from a knowledge base in <i>conjunctive normal form</i> (CNF) using the principle of <i>proof by contradiction</i>.</li>
+-->
+
+</ul>
+
+</div>
+<!--
+
+**************************************************************************
+
+-->
+<div class="Slide">
+<a name="S2"></a>
+&nbsp;<br><hr class="NoSlideOnly">
+<h1>Prolog Facts</h1>
+
+<ul>
+    <li><i>Facts</i> in Prolog state that certain propositions are true or that certain relationships hold between certain objects.<br><br></li> 
+
+    <li>For example, the fact
+    <pre>&nbsp;
+it_is_raining.</pre>
+    states that the proposition 'it_is_raining' is true, and the fact
+    <pre>&nbsp;
+likes(john, big_mac).</pre>
+    states that the relation 'likes' holds between the objects 'john' and 'big_mac'.<br><br></li> 
+
+    <li>In Prolog and in logic programming in general, we generally call propositions and relationships such as those above <i>predicates</i>, while the objects such as 'john' and 'big_mac' above are called <i>arguments</i>. The <i>arity</i> of a predicate is the number of arguments it takes, so 'it_is_raining' has arity 0 whereas 'likes' has arity 2.<br><br></li> 
+</ul>
+
+</div>
+<!--
+
+**************************************************************************
+
+-->
+<div class="Slide">
+<a name="S3"></a>
+&nbsp;<br><hr class="NoSlideOnly">
+<h1>An Example Program of Facts</h1>
+
+<ul>
+    <li>Suppose we have the following Prolog program (which is really just a list or database of facts):
+
+<pre>&nbsp;
+likes(john, big_mac).     /* comments in Prolog programs are    */
+likes(mary, big_mac).     /* written between backslash and star */
+likes(mary, ice_cream).   /* symbols like this.                 */
+likes(sue, apple_pie).
+likes(sue, ice_cream).    % Single-line comments can also start  
+likes(chris, milkshake).  % with a percentage sign.</pre>
+
+We regard this set of facts as the <i>definition</i> for the predicate 'likes' - more properly the definition of the predicate 'likes/2', the '/2' indicating the number of arguments 'likes' requires (i.e. the arity of the predicate).<br><br></li> 
+
+    <li>If the program above is saved in a file called 'foodPreferences.pl' (a plain text file), we can load it into SWI Prolog with this <i>consult</i> command (assuming it is in the default or current SWI Prolog directory):
+    
+<pre>&nbsp;
+?- [foodPreferences].</pre>
+
+or equivalently by using the SWI Prolog '<i>file - consult ...</i>' menu option.
+    </li> 
+</ul>
+
+<center>[ <a class="codelink" href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/example-prolog-programs/prologSource.php?source=foodPreferences.pl">foodPreferences.pl</a> ]</center>
+
+
+</div>
+<!--
+
+**************************************************************************
+
+-->
+<div class="Slide">
+<a name="S4"></a>
+&nbsp;<br><hr class="NoSlideOnly">
+<h1>Prolog Queries</h1>
+
+<ul>
+    <li>Having defined a predicate (e.g. 'likes/2'), we can use this definition to find out whether the predicate is true or false for certain values of its arguments by making a <i>query</i>.<br><br></li> 
+
+    <li>Thus if we ask (in SWI Prolog)
+
+<pre>&nbsp;
+?- likes(sue, ice_cream).</pre>
+
+Prolog will answer 'true' (or 'yes' in some systems), since the fact
+
+<pre>&nbsp;
+likes(sue, ice_cream).</pre>
+
+is in the program. ('?-' is a notation commonly adopted in Prolog systems to indicate that a query is being asked.)<br><br></li> 
+
+    <li>If we ask
+
+<pre>&nbsp;
+?- likes(john, ice_cream).</pre>
+
+then Prolog will answer 'false' (or 'no' in some systems).<br><br></li>
+
+    <li>Queries are also known as goals. Thus the first query above represents the goal 'likes(sue, ice_cream)'.</li> 
+ 
+</ul>
+
+</div>
+<!--
+
+**************************************************************************
+
+-->
+<div class="Slide">
+<a name="S5"></a>
+&nbsp;<br><hr class="NoSlideOnly">
+<h1>Queries With Variables</h1>
+
+<ul>
+    <li>We can also introduce variables into both facts and queries. Variables are used to stand for an unspecified single object. In SWI Prolog, variable names begin with an upper-case letter or the underscore character _.<br><br></li> 
+
+    <li>The following query means 'is there an X such that likes(chris, X) is true?':
+
+<pre>&nbsp;
+?- likes(chris, X).</pre></li> 
+ 
+    <li>Since 'likes(chris, milkshake)' appears in the program, the answer is 'true', together with the <i>substitution</i> {X=milkshake}.<br><br></li>
+    
+    <li>When more than one substitution makes a query true, we can view these one-by-one in SWI Prolog by typing ';'. For example:
+
+<pre>&nbsp;
+?- likes(sue, X).</pre></li> 
+ 
+    <li>Note that we can also ask queries such as:
+
+<pre>&nbsp;
+?- likes(X, big_mac).
+?- likes(X,Y).</pre></li>
+
+
+</ul>
+
+</div>
+<!--
+
+**************************************************************************
+
+-->
+<div class="Slide">
+<a name="S6"></a>
+&nbsp;<br><hr class="NoSlideOnly">
+<h1>Conjunctions of Queries</h1>
+
+<ul>
+    <li>We can also extend our queries from those expressing a single goal to those expressing a conjunction of goals (i.e. an "and" of two or more goals).<br><br></li> 
+
+    <li>An "and" in Prolog is indicated with a comma. For example, the query
+
+<pre>&nbsp;
+?- likes(john, X), likes(mary, X).</pre>
+
+is asking for an X such that both john and mary like X.<br><br></li> 
+ 
+    <li>In this case SWI Prolog first outputs
+
+<pre>&nbsp;
+X = big_mac</pre>
+
+and then, if we type ';' for an alternative substitution, outputs
+
+<pre>&nbsp;
+false</pre>
+
+because the program does not list anything else that both john and mary like.</li> 
+ 
+</ul>
+
+</div>
+<!--
+
+**************************************************************************
+
+-->
+<div class="Slide">
+<a name="S7"></a>
+&nbsp;<br><hr class="NoSlideOnly">
+<h1>A Family Program</h1>
+
+<p>The program 'mothersAndFathers.pl' contains definitions for 'father/2', 'mother/2', 'male/1' and 'female/1'.</p> 
+
+<pre>father(geoffrey, sylvia).
+father(geoffrey, katherine).
+father(geoffrey, rob).
+father(geoffrey, andrew).
+father(rob, rebecca).
+    .....
+mother(linda, oscar).
+mother(linda, spencer).
+mother(linda, lucy).
+mother(katherine, bene).
+    .....
+male(oscar).
+male(spencer).
+    .....
+female(rebecca).
+female(natascia).
+    .....</pre>
+
+<center>[ <a class="codelink" href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/example-prolog-programs/prologSource.php?source=mothersAndFathers.pl">mothersAndFathers.pl</a> ]</center>
+
+</div>
+<!--
+
+**************************************************************************
+
+-->
+<div class="Slide">
+<a name="S8"></a>
+&nbsp;<br><hr class="NoSlideOnly">
+<h1>Prolog Rules</h1>
+
+<ul>
+    <li>Prolog <i>rules</i> provide a means of defining relationships in terms of other relationships. One of the rules in 'mothersAndFathers.pl' is
+
+<pre>&nbsp;
+grandfather(X,Z) :- father(X,Y), father(Y,Z).</pre></li> 
+
+    <li>The ':-' is read as an 'if', so that the above rule can be interpreted as<br><br>
+    
+    &nbsp;&nbsp;&nbsp;<i>'X is the grandfather of Z if X is the father of Y and Y is the father of Z'</i><br><br></li>
+    
+    <li>In general, rules have the form
+
+<pre>&nbsp;
+A :- B<sub>1</sub>, ....., B<sub>n</sub>.</pre>
+
+'<tt>A</tt>' is known as the <i>head</i> of the rule, the conjunction '<tt>B<sub>1</sub>, ....., B<sub>n</sub></tt>' is known as the <i>body</i>.<br><br></li>
+
+    <li>As another example, the formula on Slide 4 of Lecture 1 can be represented in Prolog as the rule
+
+<pre>&nbsp;
+i_am_wet :- it_is_raining, i_am_outside.</pre></li> 
+
+<li>The definition of a predicate may be a mixture of facts and rules:
+
+<pre>&nbsp;
+male(X) :- 
+    father(X, Y).
+male(oscar).
+.....
+</pre></li>
+
+ 
+</ul>
+
+</div>
+<!--
+
+**************************************************************************
+
+-->
+
+<hr class="NoSlideOnly">
+
+</body></html>

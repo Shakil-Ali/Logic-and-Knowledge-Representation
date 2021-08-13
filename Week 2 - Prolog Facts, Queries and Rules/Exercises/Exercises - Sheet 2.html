@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0077)https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/exercises/exercises2.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>INST0072 Exercise Sheet 2</title>
+
+<style>
+body {   font-family : arial, helvetica, sans-serif;  font-size: medium;  
+}
+
+pre, tt { font-size: large; }
+
+.question {
+   page-break-inside: avoid;
+}
+</style>
+
+
+<script type="text/javascript">   
+<!-- /* Hide content from old browsers */
+
+function newWindow(url) {
+    var newWindow = window.open(url,'Examples');
+    newWindow.focus();
+}
+
+function newWindowScaleAndName(url,wScaleFactor,hScaleFactor,name) 
+{
+	var w = Math.floor(screen.availWidth * wScaleFactor);
+	var h = Math.floor(screen.availHeight * hScaleFactor);          
+	var newWindow = window.open(url,name,'width=' + w + ',height=' + 
+                                     h + ',resizable,scrollbars,menubar,location,toolbar');
+	newWindow.focus();
+}
+
+// end hiding content from old browsers  -->
+</script>
+
+</head>
+
+<body bgcolor="white"><a name="top"></a>
+
+<center>
+<h1>INST0072: Exercises for Lecture 2</h1>
+</center>
+
+<hr>
+
+<div class="question">
+<h2>Exercise 2-1</h2>
+
+<p>Add the following two pieces of information to the program
+'foodPreferences.pl' 
+[ <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/example-prolog-programs/prologSource.php?source=foodPreferences.pl">view</a> |
+<a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/example-prolog-programs/foodPreferences.pl">download</a> ]
+from Lecture 2:
+</p>
+
+<ol>
+ <li>Rob likes food that both John and Mary like.</li>
+ <li>Antonis likes food that either Sue likes or Chris likes.</li>
+</ol>
+
+<p>Your solution should result in the following input/output when tested with SWI Prolog:
+</p>
+
+<pre>    ?- likes(rob, X).
+    X = big_mac ;
+    false.
+
+    ?- likes(antonis, X).
+    X = apple_pie ;
+    X = ice_cream ;
+    X = milkshake.</pre>
+
+
+<h3>
+[ <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/exercises/answers/answer2-1/prologSource.php?source=answer2_1.pl">View Example Solution</a> | <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/exercises/answers/answer2-1/answer2_1.pl">Download Example Solution</a> ]
+</h3>
+
+<hr>
+</div>
+
+<div class="question">
+<h2>Exercise 2-2</h2>
+
+<p>
+The diagram below gives a graphical representation of the 'parent' relation implied by the program
+'mothersAndFathers.pl'
+[ <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/example-prolog-programs/prologSource.php?source=mothersAndFathers.pl">view</a> |
+<a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/example-prolog-programs/mothersAndFathers.pl">download</a> ]
+from Lecture 2.
+</p>
+
+<center>
+<img src="./Exercises - Sheet 2_files/mothersAndFathers.jpg" alt="mothersAndFathers diagram" width="546" height="234">
+<p><a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/exercises/mothersAndFathers.pdf">(click here to view diagram in larger PDF format)</a></p>
+</center>
+
+<p>Add definitions for the predicates 'parent/2', 'grandmother/2', 'son/2', 'daughter/2',  
+'grandson/2', 'granddaughter/2', 'brother/2', 'sister/2', 'aunt/2', 'uncle/2', 'niece/2' and 'nephew/2' 
+to
+<a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/example-prolog-programs/prologSource.php?source=mothersAndFathers.pl">mothersAndFathers.pl</a>. 
+(If it helps, change the set of facts for 'father/2', 'mother/2', 'male/1' and 'female/1'
+to reflect your own family.) Test the program thoroughly. (Do not worry about "repeat answers" when you enter ';'.)
+</p>
+
+<p>HINTS:</p>
+
+<ol>
+ <li>To specify that the variables X and Y are different, write:<p></p>
+
+<pre>    X \= Y</pre></li>
+
+ <li>You may find it convenient to define a predicate 'partner/2' before defining 
+ 'aunt/2', 'uncle/2', 'niece/2' and 'nephew/2' (where two people are partners if they 
+ share a son or daughter).</li>
+</ol>
+
+
+<h3>
+[ <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/exercises/answers/answer2-2/prologSource.php?source=answer2_2.pl">View Example Solution</a> | <a href="https://www.ucl.ac.uk/dis-teaching/inst0072_2020_21/exercises/answers/answer2-2/answer2_2.pl">Download Example Solution</a> ]
+</h3>
+</div>
+
+<!-- "Last update" script: -->
+
+<script type="text/javascript">
+<!-- /* Hide content from old browsers */
+  
+   var dataLastModified = Date.parse(document.lastModified);
+   var fullDataDate = new Date(dataLastModified);
+   if(dataLastModified != 0)
+   {
+      var lastUpdate = fullDataDate.getDate() + '/' + (fullDataDate.getMonth() + 1) + '/' + fullDataDate.getFullYear();
+   }
+   else
+   {
+      var lastUpdate = 'unknown';
+   }
+
+   document.writeln('<'+'center>');
+   document.writeln('<'+'hr />');
+   document.writeln('Page maintained by <'+'a href="mailto:rsm@ucl.ac.uk">Rob Miller<'+'/A>.'); 
+   document.write('Last updated: ');
+   document.write(lastUpdate);
+   document.writeln('.');
+   document.writeln('<'+'hr />');
+   document.writeln('<'+'/center>');
+
+// end hiding content from old browsers  -->
+</script><center>
+<hr>
+Page maintained by <a href="mailto:rsm@ucl.ac.uk">Rob Miller</a>.
+Last updated: 3/6/2019.
+<hr>
+</center>
+
+
+
+
+
+
+</body></html>
